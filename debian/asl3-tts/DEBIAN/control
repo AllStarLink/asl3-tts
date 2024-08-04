@@ -1,0 +1,11 @@
+Package: asl3-tts
+Version: 0.1.0-2.deb12
+Architecture: amd64
+Maintainer: Jason McCormick <jason@mfamily.org>
+Installed-Size: 113281
+Depends: asl3-asterisk
+Recommends: asl3
+Section: hamradio
+Priority: optional
+Homepage: https://github.com/AllStarLink/asl3-menu
+Description: ASL3 text to speech speaker

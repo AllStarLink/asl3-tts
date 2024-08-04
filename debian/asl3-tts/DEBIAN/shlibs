@@ -1,0 +1,3 @@
+libespeak-ng 1 asl3-tts (>= 0.1.0)
+libonnxruntime 1.14.1 asl3-tts (>= 0.1.0)
+libpiper_phonemize 1 asl3-tts (>= 0.1.0)
