@@ -37,7 +37,7 @@ deb:	debclean debprep
 	perl -pi -e 's/\@\@ARCH\@\@/$(BARCH)/g' debian/control
 	DEB_BUILD_OPTIONS="nostrip noautodbgsym" \
 		dpkg-buildpackage -b --no-sign --target-arch=$(BARCH) --target-type=$(ARCH)-linux-gnu
-	git checkout debian/changelog
+	git checkout debian/changelog || /bin/true
 
 debchange:
 	debchange --newversion $(RELVER)-$(DEBVER)
