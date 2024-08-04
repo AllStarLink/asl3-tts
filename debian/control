@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/AllStarLink/asl3-menu.git
 Rules-Requires-Root: binary-targets
 
 Package: asl3-tts
-Architecture: amd64
+Architecture: @@ARCH@@
 Recommends: asl3
 Depends: ${misc:Depends}, asl3-asterisk
 Description: ASL3 text to speech speaker
