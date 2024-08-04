@@ -19,10 +19,11 @@ on:
           - beta
           - devel
       arch:
-        description: 'Platform Architecture (Do not change)'
+        description: 'Platform Architecture'
         type: choice
         options:
           - amd64
+          - arm64
 
 env:
   APTLY_API_USER: ${{secrets.APTLY_API_USER}}
