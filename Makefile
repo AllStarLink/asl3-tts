@@ -3,8 +3,8 @@
 #
 SRCNAME = asl3-tts
 PKGNAME = $(SRCNAME)
-RELVER = 0.1.0
-DEBVER = 2
+RELVER = 0.1.1
+DEBVER = 3
 RELPLAT ?= deb$(shell lsb_release -rs 2> /dev/null)
 ARCH ?= $(shell uname -m)
 
