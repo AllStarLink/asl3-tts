@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user; 
 
 # Install build dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install \
-	apt-utils build-essential devscripts fakeroot debhelper git \
+	apt-utils build-essential devscripts fakeroot debhelper git debmake \
     gh ca-certificates wget --no-install-recommends
 
 # Install build dependencies
