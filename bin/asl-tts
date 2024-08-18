@@ -58,7 +58,7 @@ if [ ! -f "${ONNX_FILES}/${VOICE}.json" ]; then
 fi
 
 if [ -z "${TEXT}" ]; then
-	echo "Missing or zero-length text in -m"
+	echo "Missing or zero-length text in -t"
 	exit 1
 fi
 
