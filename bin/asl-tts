@@ -6,7 +6,7 @@
 # https://opensource.org/license/mit
 #
 
-ONNX_FILES="/var/lib/piper-tts"
+ONNX_FILES="/usr/lib/piper-tts/voices"
 PIPER="/usr/bin/piper"
 
 if [ ${USER} != "root" ] && [ ${USER} != "asterisk" ]; then
