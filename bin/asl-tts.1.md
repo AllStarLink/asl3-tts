@@ -23,11 +23,13 @@ with the .ul postfix.
 Running the piper-tts system takes a few seconds to compile the voice into
 the sound file. Larger text blocks may take tens of seconds to compile.
 
-Note that temporary files are written to /tmp/asl-tts/ and are not
+Note that temporary files are written to /tmp/asl-tts-${USER}/ and are not
 automatically cleaned up because it's impossible to know when
 Asterisk will actually need/speak the file contents. If this becomes
 a problem, put in a systemd timer unit or a cron job to delete old
-files in /tmp/asl-tts.
+files in /tmp/asl-tts-${USER}. For example, calling `asl-tts` as root, the
+files will be in `/tmp/asl-tts-root`; called as asterisk, the files
+will be in `/tmp/asl-tts-asterisk`.
 
 
 # VOICES
