@@ -6,6 +6,8 @@
 # https://opensource.org/license/mit
 #
 
+set -e
+
 ONNX_FILES="/var/lib/piper-tts"
 PIPER="/usr/bin/piper"
 
