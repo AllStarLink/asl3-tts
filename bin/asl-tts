@@ -6,6 +6,8 @@
 # https://opensource.org/license/mit
 #
 
+set -e
+
 ONNX_FILES="/var/lib/piper-tts"
 PIPER="/usr/bin/piper"
 
@@ -37,8 +39,8 @@ fi
 
 if [ -z "${FILE}" ]; then
 	MODE="SPEAK"
-	test ! -d /tmp/asl-tts && mkdir /tmp/asl-tts
-	FILE=$(mktemp /tmp/asl-tts/XXXXXXXX)
+	test ! -d /tmp/asl-tts-${USER} && mkdir /tmp/asl-tts-${USER}
+	FILE=$(mktemp /tmp/asl-tts-${USER}/XXXXXXXX)
 else
 	MODE="SAVE"
 fi
