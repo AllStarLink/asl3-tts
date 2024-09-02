@@ -2,3 +2,7 @@
 
 %:
 	dh $@
+
+execute_after_dh_auto_install:
+	$(RM) -f debian/tmp/var/lib/piper-tts/*.onnx.*
+	
