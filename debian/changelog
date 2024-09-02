@@ -1,3 +1,9 @@
+asl3-tts (1.0.1-1) stable; urgency=medium
+
+  * Fix symlinking for make install
+
+ -- Jason McCormick <jason@mfamily.org>  Mon, 02 Sep 2024 11:01:00 -0400
+
 asl3-tts (1.0.0-1) stable; urgency=medium
 
   * Various fixed in the beta, release 1.0.0 
