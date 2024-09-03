@@ -73,7 +73,7 @@ sox -V ${FILE} -r 8000 -c 1 -t ul ${FILE}.ul 2> ${LOGFILE}
 
 if [ ${MODE} == "SPEAK" ]; then
 	asterisk -x "rpt localplay ${NODE} ${FILE}"
-	rm ${FILE}
+	rm ${FILE}.ul
 fi
 
 
