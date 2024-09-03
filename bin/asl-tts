@@ -73,9 +73,9 @@ sox -V ${FILE} -r 8000 -c 1 -t ul ${FILE}.ul 2> ${LOGFILE}
 
 if [ ${MODE} == "SPEAK" ]; then
 	asterisk -x "rpt localplay ${NODE} ${FILE}"
+	rm ${FILE}
 fi
 
-rm ${FILE}
 
 if [ "${EXITVAL}" == "1" ]; then
 	cat ${LOGFILE}
