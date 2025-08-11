@@ -20,7 +20,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install \
 
 # Install build dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-	pandoc \
+	debmake pandoc \
 	--no-install-recommends
 
 # Import entrypoint script
