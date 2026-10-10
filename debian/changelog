@@ -1,3 +1,11 @@
+asl3-tts (2.0-1) stable; urgency=medium
+
+  * Add -c option to cleanup files (#6)
+  * Add -p option for global playback (#14)
+  * Fix Asterisk invocation error (#13) 
+
+ -- Helium <jason@mfamily.org>  Sat, 10 Oct 2026 17:39:20 -0400
+
 asl3-tts (1.0.1-1) stable; urgency=medium
 
   * Fix symlinking for make install
