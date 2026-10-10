@@ -12,5 +12,5 @@ Rules-Requires-Root: binary-targets
 Package: asl3-tts
 Architecture: @@ARCH@@
 Recommends: asl3
-Depends: ${misc:Depends}, asl3-asterisk
+Depends: ${misc:Depends}, asl3-asterisk, sox
 Description: ASL3 text to speech speaker
