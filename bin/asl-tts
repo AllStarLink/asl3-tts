@@ -12,6 +12,7 @@ ONNX_FILES="/var/lib/piper-tts"
 PIPER="/usr/bin/piper"
 SOXI="/usr/bin/soxi"
 CLEAN="NO"
+PLAYTYPE="localplay"
 
 if [ ${USER} != "root" ] && [ ${USER} != "asterisk" ]; then
 	echo "Script must be run as root or asterisk"
@@ -19,17 +20,18 @@ if [ ${USER} != "root" ] && [ ${USER} != "asterisk" ]; then
 fi
 
 function usage(){
-	echo "Usage: $0 -n {NODE} -t \"TEXT \" [ -f FILE ]" 1>&2
+	echo "Usage: $0 -n {NODE} -t \"TEXT \" [ -f FILE ] [ -v VOICE ] [ -cp ]" 1>&2
 	exit 1
 }
 
-while getopts "f:n:t:v:c" opt; do
+while getopts "f:n:t:v:cp" opt; do
 	case ${opt} in
 		f)  FILE="${OPTARG}" ;;
 		n)	NODE="${OPTARG}" ;;
 		t)	TEXT="${OPTARG}" ;;
 		v)  VOICE="${OPTARG}" ;;
 		c)  CLEAN="YES";;
+		p)  PLAYTYPE="playback";;
 		*)	usage ;;
 	esac
 done
@@ -75,7 +77,7 @@ sox -V ${FILE} -r 8000 -c 1 -t ul ${FILE}.ul 2> ${LOGFILE}
 [ "$?" != "0" ] && EXITVAL=1
 
 if [ ${MODE} == "SPEAK" ]; then
-	asterisk -rx "rpt localplay ${NODE} ${FILE}"
+	asterisk -rx "rpt ${PLAYTYPE} ${NODE} ${FILE}"
 
 	if [ ${CLEAN} == "YES" ]; then    	# Delay to allow the sound to be played and then cleanup.
 		RUNTIME=`${SOXI} -D ${FILE}.ul 2>${LOGFILE}`	# Get the length of the sound (in seconds)
