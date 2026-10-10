@@ -24,7 +24,7 @@ function usage(){
 	exit 1
 }
 
-while getopts "f:n:t:v:c" opt; do
+while getopts "f:n:t:v:cp" opt; do
 	case ${opt} in
 		f)  FILE="${OPTARG}" ;;
 		n)	NODE="${OPTARG}" ;;
