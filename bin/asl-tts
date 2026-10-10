@@ -72,7 +72,7 @@ sox -V ${FILE} -r 8000 -c 1 -t ul ${FILE}.ul 2> ${LOGFILE}
 [ "$?" != "0" ] && EXITVAL=1
 
 if [ ${MODE} == "SPEAK" ]; then
-	asterisk -x "rpt localplay ${NODE} ${FILE}"
+	asterisk -rx "rpt localplay ${NODE} ${FILE}"
 fi
 
 rm ${FILE}
