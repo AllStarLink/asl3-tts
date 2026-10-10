@@ -75,7 +75,7 @@ sox -V ${FILE} -r 8000 -c 1 -t ul ${FILE}.ul 2> ${LOGFILE}
 [ "$?" != "0" ] && EXITVAL=1
 
 if [ ${MODE} == "SPEAK" ]; then
-	asterisk -x "rpt localplay ${NODE} ${FILE}"
+	asterisk -rx "rpt localplay ${NODE} ${FILE}"
 
 	if [ ${CLEAN} == "YES" ]; then    	# Delay to allow the sound to be played and then cleanup.
 		RUNTIME=`${SOXI} -D ${FILE}.ul 2>${LOGFILE}`	# Get the length of the sound (in seconds)
